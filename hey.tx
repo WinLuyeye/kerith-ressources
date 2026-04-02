@@ -1,0 +1,17 @@
+/src
+  /app
+    /about
+    /project
+    /geology
+    /logistics
+    /energy
+    /contact
+    layout.tsx
+    page.tsx
+  /components
+    Navbar.tsx
+    Hero.tsx
+    Footer.tsx
+    Section.tsx
+
+    

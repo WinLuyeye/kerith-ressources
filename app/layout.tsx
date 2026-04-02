@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Kerith Resources Mining Project",
     description:
       "High-potential manganese mining project in the Democratic Republic of Congo.",
-    url: "https://kerithresources.com",
+    url: "https://kerithresourcesdrc.com",
     siteName: "Kerith Resources",
     images: [
       {
