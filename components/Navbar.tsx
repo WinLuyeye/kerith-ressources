@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -24,6 +23,7 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
