@@ -143,7 +143,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Dots navigation */}
       <div className="absolute bottom-8 left-6 sm:left-10 flex space-x-3">
         {slides.map((_, index) => (
           <motion.button
