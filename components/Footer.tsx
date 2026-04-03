@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import { 
   FaFacebookF, 
@@ -8,11 +10,11 @@ import {
   FaEnvelope, 
   FaMapMarkerAlt 
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // Liens principaux identiques à la navbar
   const navLinks = [
     { name: 'Accueil', href: '/' },
     { name: 'À propos', href: '/about' },
@@ -23,12 +25,15 @@ export default function Footer() {
     { name: 'Contact', href: '/contact' },
   ];
 
-  // Liens légaux (à ajouter)
   const legalLinks = [
     { name: 'Mentions légales', href: '/legal' },
     { name: 'Politique de confidentialité', href: '/privacy' },
     { name: 'Conditions générales', href: '/terms' },
   ];
+
+  const iconVariants = {
+    hover: { scale: 1.2, rotate: 10 },
+  };
 
   return (
     <footer className="bg-[#003233] text-white">
@@ -36,38 +41,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between">
         <h4 className="text-base lg:text-base font-medium mb-4 md:mb-0">Suivez-nous sur</h4>
         <div className="flex space-x-4">
-          <a 
-            href="#" 
-            rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
-            aria-label="Facebook"
-          >
-            <FaFacebookF />
-          </a>
-          <a 
-            href="#" 
-            rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
-            aria-label="Twitter"
-          >
-            <FaTwitter />
-          </a>
-          <a 
-            href="#" 
-            rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
-          <a 
-            href="#" 
-            rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
+          {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
+            <motion.a
+              key={idx}
+              href="#"
+              rel="noopener noreferrer"
+              className="p-2 bg-[#cf8e02] rounded-full"
+              whileHover="hover"
+              variants={iconVariants}
+              aria-label={`Social ${idx}`}
+            >
+              <Icon />
+            </motion.a>
+          ))}
         </div>
       </div>
 
@@ -75,8 +61,12 @@ export default function Footer() {
 
       {/* Section contact et menus */}
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Contact */}
-        <div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.5 }}
+        >
           <h4 className="text-base lg:text-base font-extrabold mb-4">Nous contacter</h4>
           <ul className="space-y-3 text-base lg:text-base font-medium">
             <li className="flex items-start gap-3">
@@ -100,27 +90,34 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Navigation principale */}
-        <div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <h4 className="text-base lg:text-base font-extrabold mb-4">Navigation</h4>
           <ul className="space-y-2 text-base lg:text-base font-medium">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link 
-                  href={link.href} 
-                  className="hover:text-[#cf8e02] transition-colors"
-                >
+                <Link href={link.href} className="hover:text-[#cf8e02] transition-colors">
                   {link.name}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* Ressources */}
-        <div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <h4 className="text-base lg:text-base font-extrabold mb-4">Ressources</h4>
           <ul className="space-y-2 text-base lg:text-base font-medium">
             <li>
@@ -128,11 +125,6 @@ export default function Footer() {
                 Actualités
               </Link>
             </li>
-            {/* <li>
-              <Link href="/blog" className="hover:text-[#cf8e02] transition-colors">
-                Blog
-              </Link>
-            </li> */}
             <li>
               <Link href="/gallery" className="hover:text-[#cf8e02] transition-colors">
                 Galerie
@@ -144,30 +136,38 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Liens légaux */}
-        <div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           <h4 className="text-base lg:text-base font-extrabold mb-4">Légal</h4>
           <ul className="space-y-2 text-base lg:text-base font-medium">
             {legalLinks.map((link) => (
               <li key={link.name}>
-                <Link 
-                  href={link.href} 
-                  className="hover:text-[#cf8e02] transition-colors"
-                >
+                <Link href={link.href} className="hover:text-[#cf8e02] transition-colors">
                   {link.name}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       <hr className="border-gray-700" />
 
       {/* Footer bas */}
-      <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-400">
+      <motion.div 
+        className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-400"
+        initial={{ opacity: 0 }} 
+        whileInView={{ opacity: 1 }} 
+        viewport={{ once: true }} 
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <p>
           © {currentYear} KERITH RESSOURCES SARL. Tous droits réservés.
         </p>
@@ -184,7 +184,7 @@ export default function Footer() {
             Cookies
           </Link>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
