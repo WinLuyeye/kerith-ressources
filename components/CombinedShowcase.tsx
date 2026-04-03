@@ -6,30 +6,36 @@ import Image from "next/image";
 export default function CombinedShowcase() {
   const sections = [
     {
-      title: "Dynamic Design Showcase",
-      subtitle: "Innovative & Modern",
-      text1:
-        "Donec volutpat vel ipsum at posuere. Mauris vitae vulputate erat viverra, pretium massa. Curabitur posuere at lorem vel ullamcorper.",
-      text2:
-        "Phasellus justo risus, dignissim sit amet tellus ac, accumsan hendrerit mauris. Nullam ultricies, urna cursus facilisis posuere, diam nisl egestas erat, vitae posuere est quam ut diam.",
+      title: "NDOKOLO",
+      subtitle: "Fault-controlled with residual concentration",
+      text1: "Le site de Ndokolo présente une minéralisation contrôlée par des failles géologiques, où les processus résiduels ont concentré le manganèse à la surface.",
+      text2: "Échantillon flottant (non in situ) : NDK01 avec une teneur exceptionnelle de 45.24% Mn, indiquant un potentiel intéressant pour l’exploitation minière responsable.",
       img: "/",
       reverse: false,
     },
     {
-      title: "Collaborative Project Hub",
-      subtitle: "Teamwork & Efficiency",
-      text1:
-        "Donec volutpat vel ipsum at posuere. Mauris vitae vulputate erat viverra, pretium massa. Curabitur posuere at lorem vel ullamcorper.",
-      text2:
-        "Phasellus justo risus, dignissim sit amet tellus ac, accumsan hendrerit mauris. Nullam ultricies, urna cursus facilisis posuere, diam nisl egestas erat, vitae posuere est quam ut diam.",
+      title: "MBONDIKA",
+      subtitle: "High-grade massive Mn (colluvial)",
+      text1: "Mbondika est caractérisée par une minéralisation massive de haute teneur en manganèse, formée par des dépôts colluviaux concentrés par gravité.",
+      text2: "Échantillon composite MDK01 : 43% Mn, illustrant la richesse du gisement et son intérêt pour des projets miniers à forte valeur ajoutée.",
       img: "/",
       reverse: true,
     },
   ];
 
   return (
-    <section className="w-full bg-white">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-32 py-24 px-5">
+    <section className="w-full bg-gray-50">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16 py-24 px-5">
+        {/* Titre de la section */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+            Sites Miniers Stratégiques
+          </h2>
+          <p className="text-gray-500 text-lg md:text-xl">
+            Nous développons des projets miniers à forte valeur ajoutée, alliant exploitation responsable et innovation durable.
+          </p>
+        </div>
+
         {sections.map((section, index) => (
           <div
             key={index}
@@ -38,35 +44,30 @@ export default function CombinedShowcase() {
             }`}
           >
             {/* Image */}
-            <div className="relative w-full md:w-1/2 h-[400px] sm:h-[500px] md:h-[600px] rounded-md overflow-hidden">
+            <div className="relative w-full md:w-1/2 h-[400px] sm:h-[500px] md:h-[600px] rounded-lg overflow-hidden">
               <Image
                 src={section.img}
                 alt={section.title}
                 fill
                 style={{ objectFit: "cover" }}
                 priority={index === 0}
+                className="rounded-lg"
               />
             </div>
 
             {/* Texte */}
             <div className="w-full md:w-1/2 flex flex-col justify-center px-5">
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#1f2937] mb-2">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                 {section.title}
-              </h2>
-              <h3 className="text-xl md:text-2xl font-medium text-[#6b7280] mb-4">
-                {section.subtitle}
               </h3>
+              <h4 className="text-xl md:text-2xl font-semibold text-gray-500 mb-4">
+                {section.subtitle}
+              </h4>
               <div className="mb-4">
                 <hr className="border-t-2 border-[#f87171] w-16" />
               </div>
-              <p className="text-[#1f2937] text-lg font-medium mb-2">{section.text1}</p>
-              <p className="text-[#1f2937] text-base font-light leading-relaxed mb-4">{section.text2}</p>
-              <a
-                href="#"
-                className="text-[#f87171] font-bold underline hover:text-[#f59e0b] transition-colors"
-              >
-                Read more
-              </a>
+              <p className="text-gray-700 text-lg font-medium mb-2">{section.text1}</p>
+              <p className="text-gray-700 text-base font-light leading-relaxed mb-4">{section.text2}</p>
             </div>
           </div>
         ))}
