@@ -19,7 +19,7 @@ export default function Home() {
       <CombinedShowcase />
       <Actualites />
       <TeamSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
       <Footer />
     </main>
   );

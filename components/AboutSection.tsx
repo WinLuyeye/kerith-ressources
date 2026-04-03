@@ -1,14 +1,12 @@
 // components/About.tsx
-'use client';
+"use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="w-full pt-[90px] pb-[90px] px-5 bg-white"
-    >
+    <section id="about" className="w-full pt-[90px] pb-[90px] px-5 bg-white">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:space-x-10">
           {/* Texte */}
@@ -20,34 +18,38 @@ export default function AboutSection() {
             </div>
 
             <p className="text-[#1f2937] text-lg font-medium mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit aliquet convallis.
+              KERITH RESSOURCES SARL
             </p>
 
             <p className="text-[#1f2937] text-base font-light leading-relaxed mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat
-              aliquet convallis. Morbi cursus scelerisque est, a sodales mi fringilla sit
-              amet. Donec ultrices id ante a tempus. Sed scelerisque elit in lectus fermentum
-              condimentum.
+              KERITH RESOURCES SARL est une société minière de droit congolais
+              qui détient trente (30) concessions situées dans le territoire de
+              Luozi, en province du Kongo-Central. La société a obtenu le Permis
+              de Recherches n°16000, couvrant 15 carrés miniers, et bénéficie de
+              droits exclusifs pour prospecter et rechercher des substances
+              minérales telles que le fer, le cuivre, la bauxite et l’or ...
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#contact"
-                className="bg-[#003233] text-white px-10 py-5 uppercase text-sm font-light tracking-wider hover:bg-[#003233] transition-colors"
+              <Link
+                href="/about"
+                className="bg-[#003233] text-white px-10 py-5 uppercase text-sm font-light hover:bg-white hover:text-[#003233] hover:border hover:border-[#003233]"
               >
                 A savoir plus
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Image avec next/image */}
           <div className="lg:w-7/12 mt-10 lg:mt-0 relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
             <Image
-                          src="/public/logo2.png"
-                          fill
-                          style={{ objectFit: "cover" }}
-                          className="rounded-md"
-                          priority alt={""}            />
+              src="/public/logo2.png"
+              fill
+              style={{ objectFit: "cover" }}
+              className="rounded-md"
+              priority
+              alt={""}
+            />
           </div>
         </div>
       </div>
