@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+// import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState('EN');
   const [mounted, setMounted] = useState(false);
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   const navLinks = [
     { name: 'Accueil', href: '/' },

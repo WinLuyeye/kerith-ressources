@@ -1,7 +1,7 @@
-// components/ContactSection.tsx
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -40,14 +40,30 @@ export default function ContactSection() {
       </div>
 
       {/* Content */}
-      <div className="py-16 px-8 bg-white relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 z-10">
+      <motion.div
+        className="py-16 px-8 bg-white relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 z-10"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         {/* Left Column - Info */}
-        <div className="text-black flex flex-col justify-center px-5">
+        <motion.div
+          className="text-black flex flex-col justify-center px-5"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="text-4xl font-extrabold text-[#1f2937] mb-4">
             Contactez-nous
           </h2>
-          <hr className="border-t-2 border-[#cf8e02] w-42 mb-6"/>
-          <p className="text-base font-medium mb-6 max-w-lg">
+                  <motion.hr
+          initial={{ width: 0 }}
+          whileInView={{ width: "160px" }}
+          transition={{ duration: 0.8 }}
+          className="border-t-2 border-[#cf8e02]"
+        />
+          <p className="text-base font-medium mb-6 max-w-lg mt-4">
             Vous avez une question ou souhaitez en savoir plus sur nos projets ?
             N&apos;hésitez pas à nous contacter.
           </p>
@@ -60,47 +76,54 @@ export default function ContactSection() {
               Concession Procoki, Ngaliema - Kinshasa
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Right Column - Formulaire */}
-        <div className="">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Votre nom"
-              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Votre email"
-              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
-              required
-            />
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Votre message"
-              rows={5}
-              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
-              required
-            />
-            <button
-              type="submit"
-                className="bg-[#003233] text-white px-10 py-5 uppercase text-sm font-light hover:bg-white hover:text-[#003233] hover:border hover:border-[#003233] cursor-pointer transition-colors" 
-              >
-              Envoyer
-            </button>
-          </form>
-        </div>
-      </div>
+        {/* Right Column - Form */}
+        <motion.form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Votre nom"
+            className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Votre email"
+            className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
+            required
+          />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Votre message"
+            rows={5}
+            className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
+            required
+          />
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#003233] text-white px-10 py-5 uppercase text-sm font-light hover:bg-white hover:text-[#003233] hover:border hover:border-[#003233] cursor-pointer transition-colors"
+          >
+            Envoyer
+          </motion.button>
+        </motion.form>
+      </motion.div>
     </section>
   );
 }

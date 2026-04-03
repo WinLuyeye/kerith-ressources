@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import { LucidePickaxe, Factory, TrendingUp, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
