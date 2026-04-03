@@ -33,7 +33,7 @@ export default function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/about"
-                className="bg-[#003233] text-white px-10 py-5 uppercase text-sm font-light hover:bg-white hover:text-[#003233] hover:border hover:border-[#003233]"
+                className="cursor-pointer bg-[#003233] text-white px-10 py-5 uppercase text-sm font-light hover:bg-white hover:text-[#003233] hover:border hover:border-[#003233]"
               >
                 A savoir plus
               </Link>
