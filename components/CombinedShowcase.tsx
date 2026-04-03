@@ -7,7 +7,7 @@ export default function CombinedShowcase() {
   const sections = [
     {
       title: "NDOKOLO",
-      subtitle: "Fault-controlled with residual concentration",
+      subtitle: "Régulation des défauts avec concentration résiduelle",
       text1: "Le site de Ndokolo présente une minéralisation contrôlée par des failles géologiques, où les processus résiduels ont concentré le manganèse à la surface.",
       text2: "Échantillon flottant (non in situ) : NDK01 avec une teneur exceptionnelle de 45.24% Mn, indiquant un potentiel intéressant pour l’exploitation minière responsable.",
       img: "/",
@@ -15,7 +15,7 @@ export default function CombinedShowcase() {
     },
     {
       title: "MBONDIKA",
-      subtitle: "High-grade massive Mn (colluvial)",
+      subtitle: "Mn massif de haute qualité (colluvial)",
       text1: "Mbondika est caractérisée par une minéralisation massive de haute teneur en manganèse, formée par des dépôts colluviaux concentrés par gravité.",
       text2: "Échantillon composite MDK01 : 43% Mn, illustrant la richesse du gisement et son intérêt pour des projets miniers à forte valeur ajoutée.",
       img: "/",
