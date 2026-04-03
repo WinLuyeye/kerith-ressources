@@ -20,7 +20,7 @@ h1, h2, h3 {
 /* TEXTE */
 p {
   line-height: 1.7;
-  color: #d1d5db;
+  /* color: #d1d5db; */
 }
 
 /* BOUTONS */

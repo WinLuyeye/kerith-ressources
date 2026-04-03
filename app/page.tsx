@@ -1,12 +1,14 @@
 // app/page.tsx
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Features from '@/components/Features';
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
+      <Features />
       <section className="py-16 bg-gray-100 text-red-400">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Nos Services</h2>

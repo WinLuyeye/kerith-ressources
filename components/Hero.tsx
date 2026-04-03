@@ -12,7 +12,7 @@ const Hero = () => {
     description:
       "Kerith Resources développe un projet minier stratégique en RDC avec 30 concessions à Luozi, en mettant l’accent sur une exploitation responsable, durable et tournée vers l’innovation.",
     image:
-      'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2070&q=80',
+      'https://mines.cd/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-20-at-15.27.28.jpeg',
   },
   {
     title: 'Un portefeuille minier à fort potentiel',
@@ -20,7 +20,7 @@ const Hero = () => {
     description:
       "Grâce à un partenariat avec le Service Géologique National du Congo (SGNC), nous accédons à des zones riches en ressources offrant des opportunités importantes d’exploration et de croissance.",
     image:
-      'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=2070&q=80',
+      'https://afrique.lalibre.be/wp-content/uploads/2022/12/RDC-lor-le-cuivre-le-cobalt-le%CC%81tain-et-le-zinc-enregistrent-une-baisse-de-prix-cette-semaine-sur-le-marche%CC%81-international-Mercuriales.png',
   },
   {
     title: 'Une approche responsable et durable',
@@ -28,7 +28,7 @@ const Hero = () => {
     description:
       "Nous intégrons des normes environnementales et sociales strictes afin de garantir un développement minier durable, bénéfique pour les communautés locales et les partenaires.",
     image:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2070&q=80',
+      'https://www.tsieleka.com/wp-content/uploads/2020/09/MINESMETAUX-PRIMAIRES.jpg',
   },
   ];
 
