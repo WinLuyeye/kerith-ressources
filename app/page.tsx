@@ -16,8 +16,8 @@ export default function Home() {
       <Hero />
       <Features />
       <AboutSection />
-      <Actualites />
       <CombinedShowcase />
+      <Actualites />
       <TeamSection />
       <ContactSection />
       <Footer />
