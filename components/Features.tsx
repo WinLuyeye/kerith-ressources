@@ -1,5 +1,3 @@
-// components/ServicesSection.tsx
-
 import Link from "next/link";
 import { LucidePickaxe, Factory, TrendingUp, Users } from "lucide-react";
 
@@ -36,7 +34,7 @@ const services = [
 
 export default function Features() {
   return (
-    <section className="-py-16 bg-white">
+    <section className="relative z-20 px-6 bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto">
         
         {/* GRID */}
@@ -47,15 +45,15 @@ export default function Features() {
             return (
               <div
                 key={index}
-                className="relative bg-gray-100 p-8 pt-12 duration-300 group"
+                className="relative bg-gray-200 p-8 pt-16 duration-300 group "
               >
-                {/* ICON */}
-                <div className="absolute -top-16 right-24 bg-[#003233] text-white p-3">
-                  <Icon size={70} />
+                {/* ICON CENTERED */}
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#003233] text-white p-4 ">
+                  <Icon size={50} />
                 </div>
 
                 {/* CONTENT */}
-                <h3 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-[#003233]-colors">
+                <h3 className="text-2xl font-semibold mb-3 text-gray-900  group-hover:text-[#003233]">
                   {service.title}
                 </h3>
 
@@ -64,12 +62,14 @@ export default function Features() {
                 </p>
 
                 {/* BUTTON */}
-                <Link
-                  href={service.link}
-                  className="text-sm font-medium text-[#003233] hover:underline"
-                >
-                  En savoir plus →
-                </Link>
+                <div className="">
+                  <Link
+                    href={service.link}
+                    className="text-sm font-bold text-[#003233] hover:underline"
+                  >
+                    En savoir plus →
+                  </Link>
+                </div>
               </div>
             );
           })}
