@@ -27,7 +27,7 @@ export default function CombinedShowcase() {
     <section className="w-full bg-gray-50">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-16 py-24 px-5">
         {/* Titre de la section */}
-        <div className="text-center mb-16">
+        <div className=" mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
             Sites Miniers Stratégiques
           </h2>

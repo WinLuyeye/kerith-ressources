@@ -4,68 +4,66 @@
 import Image from "next/image";
 
 export default function Actualites() {
-  const cards = [
+  const news = [
     {
-      img: "",
-      title: "Intelligent Automation",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat aliquet convallis. Morbi cursus scelerisque est.",
+      img: "https://www.primature.gouv.cd/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-08-at-10.48.36-scaled.jpeg", 
+      title: "Kerith Ressources signe un nouveau partenariat",
+      text: "Kerith Ressources a conclu un accord stratégique pour développer ses opérations minières avec un accent sur la durabilité et l’innovation.",
       link: "#",
     },
     {
-      img: "",
-      title: "Immersive User Interface",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat aliquet convallis. Morbi cursus scelerisque est.",
+      img: "https://www.primature.gouv.cd/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-08-at-10.48.36-scaled.jpeg",
+      title: "Lancement du projet Ndokolo",
+      text: "Le projet minier de Ndokolo démarre avec des échantillons prometteurs contenant jusqu’à 45% de manganèse, illustrant le potentiel de la région.",
       link: "#",
     },
     {
-      img: "",
-      title: "Real-time Collaboration",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat aliquet convallis. Morbi cursus scelerisque est.",
+      img: "https://www.primature.gouv.cd/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-08-at-10.48.36-scaled.jpeg",
+      title: "Mbondika : exploration avancée",
+      text: "Les études à Mbondika révèlent une minéralisation massive en manganèse, ouvrant la voie à de futurs projets miniers à forte valeur ajoutée.",
       link: "#",
     },
   ];
 
   return (
-    <section
-      id="features"
-      className="w-full bg-gray-100 pt-[90px] pb-[90px] px-5"
-    >
+    <section id="actualites" className="w-full bg-gray-100 pt-[90px] pb-[90px] px-5">
       <div className="max-w-[1200px] mx-auto">
         {/* Heading */}
-        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-[2.5rem] text-center text-[#1f2937] mb-5">
-            A few things we’re great at
+        <div className="flex flex-col mb-16">
+          <h2 className="text-4xl md:text-5xl text-gray-800 font-extrabold mb-4">
+            Dernières Nouvelles
           </h2>
           <div className="py-2">
-            <hr className="border-t-2 border-[#003233] w-16 mx-auto" />
+            <hr className=" w-16 mx-auto" />
           </div>
-          <p className="text-center text-[#1f2937] text-lg font-medium max-w-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat aliquet convallis. Morbi cursus scelerisque est, a sodales mi fringilla sit amet.
+          <p className="text-gray-600 text-lg md:text-xl font-medium max-w-2xl mt-4">
+            Restez informé des derniers développements de Kerith Ressources, de nos projets miniers et de nos initiatives stratégiques.
           </p>
         </div>
 
-        {/* Cards */}
+        {/* News Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {cards.map((card, index) => (
-            <div key={index} className="flex flex-col items-start">
-              <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[350px] mb-4">
+          {news.map((item, index) => (
+            <div key={index} className="overflow-hidden flex flex-col">
+              <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[250px]">
                 <Image
-                  src={card.img}
-                  alt={card.title}
+                  src={item.img}
+                  alt={item.title}
                   fill
                   style={{ objectFit: "cover" }}
-                  className="rounded-md"
                   priority={index === 0}
                 />
               </div>
-              <h3 className="text-[#1f2937] text-xl font-semibold mb-2">{card.title}</h3>
-              <p className="text-[#1f2937] text-base font-light leading-relaxed mb-3">{card.text}</p>
-              <a
-                href={card.link}
-                className="text-[#f87171] font-bold underline hover:text-[#f59e0b] transition-colors"
-              >
-                Read more
-              </a>
+              <div className="py-5 flex flex-col flex-1">
+                <h3 className="text-gray-800 text-xl font-semibold mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-base font-light mb-4 leading-relaxed flex-1">{item.text}</p>
+                <a
+                  href={item.link}
+                  className="text-[#f87171] font-bold underline hover:text-[#f59e0b] transition-colors mt-auto"
+                >
+                  Lire la suite
+                </a>
+              </div>
             </div>
           ))}
         </div>
