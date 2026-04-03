@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
+/* FONTS */
 :root {
-  --font-body: 'Inter', sans-serif;
-  --font-title: 'Playfair Display', serif;
+  --font-body: 'Mulish', sans-serif;
+  --font-title: 'Mulish', sans-serif;
 }
 
+/* BODY */
 body {
   font-family: var(--font-body);
   background-color: #0a0a0a;
@@ -14,21 +16,22 @@ body {
 /* TITRES */
 h1, h2, h3 {
   font-family: var(--font-title);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
+  font-weight: 600;
 }
 
 /* TEXTE */
 p {
   line-height: 1.7;
-  /* color: #d1d5db; */
 }
 
 /* BOUTONS */
 button {
   font-weight: 500;
+  font-family: var(--font-body);
 }
 
-
+/* ANIMATIONS */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -52,7 +55,7 @@ button {
   animation-delay: 0.4s;
 }
 
-/* Custom scrollbar */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
   width: 8px;
 }

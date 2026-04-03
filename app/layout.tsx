@@ -1,15 +1,11 @@
 import "./globals.css";
 import { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Mulish } from "next/font/google";
 
-const inter = Inter({
+const mulish = Mulish({
   subsets: ["latin"],
   variable: "--font-body",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-title",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -68,7 +64,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${mulish.variable}`}>
         {children}
       </body>
     </html>
