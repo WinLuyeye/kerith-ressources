@@ -11,18 +11,36 @@ import {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
+  // Liens principaux identiques à la navbar
+  const navLinks = [
+    { name: 'Accueil', href: '/' },
+    { name: 'À propos', href: '/about' },
+    { name: 'Projet', href: '/project' },
+    { name: 'Géologie', href: '/geology' },
+    { name: 'Logistique', href: '/logistics' },
+    { name: 'Énergie', href: '/energy' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
+  // Liens légaux (à ajouter)
+  const legalLinks = [
+    { name: 'Mentions légales', href: '/legal' },
+    { name: 'Politique de confidentialité', href: '/privacy' },
+    { name: 'Conditions générales', href: '/terms' },
+  ];
+
   return (
     <footer className="bg-[#003233] text-white">
       {/* Section réseaux sociaux */}
       <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between">
-        <h4 className="text-sm font-semibold mb-4 md:mb-0">Suivez-nous sur</h4>
+        <h4 className="text-base lg:text-base font-medium mb-4 md:mb-0">Suivez-nous sur</h4>
         <div className="flex space-x-4">
           <a 
             href="https://www.facebook.com/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
+            className="p-2 bg-[#f87171] rounded-full hover:bg-[#f59e0b] transition-colors"
             aria-label="Facebook"
           >
             <FaFacebookF />
@@ -31,7 +49,7 @@ export default function Footer() {
             href="https://twitter.com/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
+            className="p-2 bg-[#f87171] rounded-full hover:bg-[#f59e0b] transition-colors"
             aria-label="Twitter"
           >
             <FaTwitter />
@@ -40,7 +58,7 @@ export default function Footer() {
             href="https://www.instagram.com/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
+            className="p-2 bg-[#f87171] rounded-full hover:bg-[#f59e0b] transition-colors"
             aria-label="Instagram"
           >
             <FaInstagram />
@@ -49,7 +67,7 @@ export default function Footer() {
             href="https://www.linkedin.com/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="p-2 bg-[#cf8e02] rounded-full hover:bg-[#f59e0b] transition-colors"
+            className="p-2 bg-[#f87171] rounded-full hover:bg-[#f59e0b] transition-colors"
             aria-label="LinkedIn"
           >
             <FaLinkedinIn />
@@ -60,11 +78,11 @@ export default function Footer() {
       <hr className="border-gray-700" />
 
       {/* Section contact et menus */}
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Contact */}
         <div>
-          <h4 className="text-sm font-semibold mb-4">Nous contacter</h4>
-          <ul className="space-y-3 text-sm">
+          <h4 className="text-base lg:text-base font-medium mb-4">Nous contacter</h4>
+          <ul className="space-y-3 text-base lg:text-base font-medium">
             <li className="flex items-start gap-3">
               <FaMapMarkerAlt className="mt-0.5 flex-shrink-0" />
               <span>
@@ -75,85 +93,77 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <FaPhoneAlt className="flex-shrink-0" />
-              <a href="tel:+243999999999" className="hover:text-[#cf8e02] transition-colors">
+              <a href="tel:+243999999999" className="hover:text-[#f87171] transition-colors">
                 +243 999 999 999
               </a>
             </li>
             <li className="flex items-center gap-3">
               <FaEnvelope className="flex-shrink-0" />
-              <a href="mailto:contact@kerithressourcesdrc.com" className="hover:text-[#cf8e02] transition-colors">
+              <a href="mailto:contact@kerithressourcesdrc.com" className="hover:text-[#f87171] transition-colors">
                 contact@kerithressourcesdrc.com
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Liens rapides */}
+        {/* Navigation principale */}
         <div>
-          <h4 className="text-sm font-semibold mb-4">Liens rapides</h4>
-          <ul className="space-y-2 text-sm">
+          <h4 className="text-base lg:text-base font-medium mb-4">Navigation</h4>
+          <ul className="space-y-2 text-base lg:text-base font-medium">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link 
+                  href={link.href} 
+                  className="hover:text-[#f87171] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Ressources */}
+        <div>
+          <h4 className="text-base lg:text-base font-medium mb-4">Ressources</h4>
+          <ul className="space-y-2 text-base lg:text-base font-medium">
             <li>
-              <Link href="/" className="hover:text-[#cf8e02] transition-colors">
-                Accueil
+              <Link href="/news" className="hover:text-[#f87171] transition-colors">
+                Actualités
+              </Link>
+            </li>
+            {/* <li>
+              <Link href="/blog" className="hover:text-[#f87171] transition-colors">
+                Blog
+              </Link>
+            </li> */}
+            <li>
+              <Link href="/gallery" className="hover:text-[#f87171] transition-colors">
+                Galerie
               </Link>
             </li>
             <li>
-              <Link href="#about" className="hover:text-[#cf8e02] transition-colors">
-                Qui sommes-nous
-              </Link>
-            </li>
-            <li>
-              <Link href="#activities" className="hover:text-[#cf8e02] transition-colors">
-                Nos activités
-              </Link>
-            </li>
-            <li>
-              <Link href="#publications" className="hover:text-[#cf8e02] transition-colors">
-                Publications
-              </Link>
-            </li>
-            <li>
-              <Link href="#cse" className="hover:text-[#cf8e02] transition-colors">
-                RSE
-              </Link>
-            </li>
-            <li>
-              <Link href="#media" className="hover:text-[#cf8e02] transition-colors">
-                Médias
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="hover:text-[#cf8e02] transition-colors">
-                Contact
+              <Link href="/faq" className="hover:text-[#f87171] transition-colors">
+                FAQ
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Médias & Actualités */}
+        {/* Liens légaux */}
         <div>
-          <h4 className="text-sm font-semibold mb-4">Médias & Actualités</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/news" className="hover:text-[#cf8e02] transition-colors">
-                Actualités
-              </Link>
-            </li>
-            <li>
-              <Link href="/press-releases" className="hover:text-[#cf8e02] transition-colors">
-                Communiqués de presse
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="hover:text-[#cf8e02] transition-colors">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/gallery" className="hover:text-[#cf8e02] transition-colors">
-                Galerie
-              </Link>
-            </li>
+          <h4 className="text-base lg:text-base font-bold mb-4">Légal</h4>
+          <ul className="space-y-2 text-base lg:text-base font-medium">
+            {legalLinks.map((link) => (
+              <li key={link.name}>
+                <Link 
+                  href={link.href} 
+                  className="hover:text-[#f87171] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -165,17 +175,17 @@ export default function Footer() {
         <p>
           © {currentYear} KERITH RESSOURCES SARL. Tous droits réservés.
         </p>
-        <div className="mt-2 space-x-4">
-          <Link href="/legal" className="hover:text-[#cf8e02] transition-colors text-xs">
-            Mentions légales
+        <div className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-2">
+          <Link href="/#" className="hover:text-[#f87171] transition-colors text-xs">
+            Confidentialité
           </Link>
-          <span>|</span>
-          <Link href="/privacy" className="hover:text-[#cf8e02] transition-colors text-xs">
-            Politique de confidentialité
+          <span className="text-gray-600">|</span>
+          <Link href="/#" className="hover:text-[#f87171] transition-colors text-xs">
+            Conditions d&apos;utilisation
           </Link>
-          <span>|</span>
-          <Link href="/cookies" className="hover:text-[#cf8e02] transition-colors text-xs">
-            Gestion des cookies
+          <span className="text-gray-600">|</span>
+          <Link href="/#" className="hover:text-[#f87171] transition-colors text-xs">
+            Cookies
           </Link>
         </div>
       </div>
