@@ -18,7 +18,7 @@ export default function CombinedShowcase() {
       subtitle: "Mn massif de haute qualité (colluvial)",
       text1: "Mbondika est caractérisée par une minéralisation massive de haute teneur en manganèse, formée par des dépôts colluviaux concentrés par gravité.",
       text2: "Échantillon composite MDK01 : 43% Mn, illustrant la richesse du gisement et son intérêt pour des projets miniers à forte valeur ajoutée.",
-      img: "/",
+      img: "https://environews-rdc.net/wp-content/uploads/2025/05/Manganese-Ore.jpeg",
       reverse: true,
     },
   ];
