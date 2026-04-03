@@ -76,7 +76,7 @@ const Hero = () => {
               md:text-6xl 
               lg:text-7xl 
               xl:text-[85px] 
-              font-bold 
+              font-extrabold 
               text-white 
               leading-tight 
               mb-6

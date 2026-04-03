@@ -34,9 +34,9 @@ export default function Actualites() {
             Dernières Nouvelles
           </h2>
           <div className="py-2">
-            <hr className=" w-16 mx-auto" />
+                      <hr className="border-t-2 border-[#cf8e02] w-42"/>
           </div>
-          <p className="text-gray-600 text-lg md:text-xl font-medium max-w-2xl mt-4">
+          <p className="text-gray-600 text-lg md:text-xl font-medium max-w-full">
             Restez informé des derniers développements de Kerith Ressources, de nos projets miniers et de nos initiatives stratégiques.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Actualites() {
                 <p className="text-gray-600 text-base font-light mb-4 leading-relaxed flex-1">{item.text}</p>
                 <a
                   href={item.link}
-                  className="text-[#f87171] font-bold underline hover:text-[#f59e0b] transition-colors mt-auto"
+                  className="text-[#cf8e02] font-extrabold underline hover:text-[#f59e0b] transition-colors mt-auto"
                 >
                   Lire la suite
                 </a>

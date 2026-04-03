@@ -14,7 +14,7 @@ export default function AboutSection() {
             <h2 className="text-[2.5rem] text-[#1f2937] mb-1">A propos</h2>
 
             <div className="py-4">
-              <hr className="border-t-2 border-[#003233] w-16" />
+                        <hr className="border-t-2 border-[#cf8e02] w-42 "/>
             </div>
 
             <p className="text-[#1f2937] text-lg font-medium mb-4">

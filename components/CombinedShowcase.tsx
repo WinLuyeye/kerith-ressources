@@ -31,6 +31,7 @@ export default function CombinedShowcase() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
             Sites Miniers Stratégiques
           </h2>
+                    <hr className="border-t-2 border-[#cf8e02] w-42 mb-6"/>
           <p className="text-gray-500 text-lg md:text-xl">
             Nous développons des projets miniers à forte valeur ajoutée, alliant exploitation responsable et innovation durable.
           </p>
@@ -57,7 +58,7 @@ export default function CombinedShowcase() {
 
             {/* Texte */}
             <div className="w-full md:w-1/2 flex flex-col justify-center px-5">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-2">
                 {section.title}
               </h3>
               <h4 className="text-xl md:text-2xl font-semibold text-gray-500 mb-4">

@@ -15,10 +15,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Accueil', href: '/' },
     { name: 'À propos', href: '/about' },
+    { name: 'Projet', href: '/project' },
     { name: 'Géologie', href: '/geology' },
     { name: 'Logistique', href: '/logistics' },
     { name: 'Énergie', href: '/energy' },
-    { name: 'Projet', href: '/project' },
     { name: 'Contact', href: '/contact' },
   ];
 

@@ -65,7 +65,7 @@ export default function Features() {
                 <div className="">
                   <Link
                     href={service.link}
-                    className="text-sm font-bold text-[#003233] hover:underline"
+                    className="text-sm font-extrabold text-[#003233] hover:underline"
                   >
                     En savoir plus →
                   </Link>

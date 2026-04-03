@@ -43,15 +43,15 @@ export default function ContactSection() {
       <div className="py-16 px-8 bg-white relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 z-10">
         {/* Left Column - Info */}
         <div className="text-black flex flex-col justify-center px-5">
-          <h2 className="text-4xl font-bold text-[#1f2937] mb-4">
+          <h2 className="text-4xl font-extrabold text-[#1f2937] mb-4">
             Contactez-nous
           </h2>
-          <hr className="border-t-2 border-[#f87171] w-16 mb-6" />
-          <p className="text-lg font-medium mb-6 max-w-lg">
+          <hr className="border-t-2 border-[#cf8e02] w-42 mb-6"/>
+          <p className="text-base font-medium mb-6 max-w-lg">
             Vous avez une question ou souhaitez en savoir plus sur nos projets ?
             N&apos;hésitez pas à nous contacter.
           </p>
-          <ul className="font-medium text-lg space-y-3">
+          <ul className="font-medium text-base space-y-3">
             <li>+243 999 999 999</li>
             <li>contact@kerithressourcesdrc.com</li>
             <li>
@@ -71,7 +71,7 @@ export default function ContactSection() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Votre nom"
-              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#f87171] transition-colors"
+              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
               required
             />
             <input
@@ -80,7 +80,7 @@ export default function ContactSection() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Votre email"
-              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#f87171] transition-colors"
+              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
               required
             />
             <textarea
@@ -89,7 +89,7 @@ export default function ContactSection() {
               onChange={handleChange}
               placeholder="Votre message"
               rows={5}
-              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#f87171] transition-colors"
+              className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
               required
             />
             <button

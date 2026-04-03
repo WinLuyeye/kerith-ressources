@@ -22,7 +22,7 @@ export default function DirectionSection() {
   return (
     <section id="direction" className="bg-white py-24 px-5">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-[#1f2937]">Notre Direction</h2>
+        <h2 className="text-4xl font-extrabold text-[#1f2937]">Notre Direction</h2>
         <hr className="border-t-2 border-[#f87171] my-10 w-24" />
         <p className="text-[#6b7280] text-lg font-medium ">
           Découvrez les dirigeants qui pilotent Kerith Ressources, assurant stratégie, innovation et développement durable.
@@ -44,7 +44,7 @@ export default function DirectionSection() {
                 />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-[#1f2937]">{member.name}</h3>
-              <p className="text-sm font-bold uppercase text-[#6b7280]">{member.role}</p>
+              <p className="text-sm font-extrabold uppercase text-[#6b7280]">{member.role}</p>
             </Link>
           ))}
         </div>
