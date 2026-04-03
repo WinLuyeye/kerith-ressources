@@ -20,7 +20,7 @@ const directors = [
 
 export default function DirectionSection() {
   return (
-    <section id="direction" className="bg-white py-24 px-5">
+    <section id="direction" className="bg-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-extrabold text-[#1f2937]">Notre Direction</h2>
         <hr className="border-t-2 border-[#f87171] my-10 w-24" />

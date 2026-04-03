@@ -1,7 +1,7 @@
-// components/Actualites.tsx
 'use client';
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Actualites() {
   const news = [
@@ -34,7 +34,12 @@ export default function Actualites() {
             Dernières Nouvelles
           </h2>
           <div className="py-2">
-                      <hr className="border-t-2 border-[#cf8e02] w-42"/>
+                      <motion.hr
+            initial={{ width: 0 }}
+            whileInView={{ width: "160px" }}
+            transition={{ duration: 0.8 }}
+            className="border-t-2 border-[#cf8e02] mb-6"
+          />
           </div>
           <p className="text-gray-600 text-lg md:text-xl font-medium max-w-full">
             Restez informé des derniers développements de Kerith Ressources, de nos projets miniers et de nos initiatives stratégiques.
@@ -44,7 +49,14 @@ export default function Actualites() {
         {/* News Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {news.map((item, index) => (
-            <div key={index} className="overflow-hidden flex flex-col">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="overflow-hidden flex flex-col bg-white  cursor-pointer"
+            >
               <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[250px]">
                 <Image
                   src={item.img}
@@ -54,7 +66,7 @@ export default function Actualites() {
                   priority={index === 0}
                 />
               </div>
-              <div className="py-5 flex flex-col flex-1">
+              <div className="py-5 flex flex-col flex-1 px-4">
                 <h3 className="text-gray-800 text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-gray-600 text-base font-light mb-4 leading-relaxed flex-1">{item.text}</p>
                 <a
@@ -64,7 +76,7 @@ export default function Actualites() {
                   Lire la suite
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
