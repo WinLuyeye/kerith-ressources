@@ -16,9 +16,10 @@ const Navbar = () => {
     { name: 'Accueil', href: '/' },
     { name: 'À propos', href: '/about' },
     { name: 'Projet', href: '/project' },
-    { name: 'Géologie', href: '/geology' },
-    { name: 'Logistique', href: '/logistics' },
-    { name: 'Énergie', href: '/energy' },
+    // { name: 'Géologie', href: '/geology' },
+    // { name: 'Logistique', href: '/logistics' },
+    // { name: 'Énergie', href: '/energy' },
+    { name : 'Actualités', href: '/news' },
     { name: 'Contact', href: '/contact' },
   ];
 

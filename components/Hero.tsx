@@ -1,162 +1,97 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { motion } from 'framer-motion';
 
-const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      title: 'Révéler le potentiel minier du Kongo-Central',
-      ghost: 'Kerith',
-      description:
-        "Kerith Resources développe un projet minier stratégique en RDC avec 30 concessions à Luozi, en mettant l’accent sur une exploitation responsable, durable et tournée vers l’innovation.",
-      image:
-        'https://mines.cd/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-20-at-15.27.28.jpeg',
-    },
-    {
-      title: 'Un portefeuille minier à fort potentiel',
-      ghost: 'Mining',
-      description:
-        "Grâce à un partenariat avec le Service Géologique National du Congo (SGNC), nous accédons à des zones riches en ressources offrant des opportunités importantes d’exploration et de croissance.",
-      image:
-        'https://afrique.lalibre.be/wp-content/uploads/2022/12/RDC-lor-le-cuivre-le-cobalt-le%CC%81tain-et-le-zinc-enregistrent-une-baisse-de-prix-cette-semaine-sur-le-marche%CC%81-international-Mercuriales.png',
-    },
-    {
-      title: 'Une approche responsable et durable',
-      ghost: 'Sustainable',
-      description:
-        "Nous intégrons des normes environnementales et sociales strictes afin de garantir un développement minier durable, bénéfique pour les communautés locales et les partenaires.",
-      image:
-        'https://www.tsieleka.com/wp-content/uploads/2020/09/MINESMETAUX-PRIMAIRES.jpg',
-    },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
+const About = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="bg-gray-100 w-full min-h-screen">
+      {/* Navbar */}
+      <Navbar />
 
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <motion.div
-          key={index}
-          className="absolute inset-0"
-          animate={{ opacity: index === currentSlide ? 1 : 0 }}
-          transition={{ duration: 1 }}
+      {/* Hero Section */}
+      <div
+        className="relative h-96 md:h-[500px] flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://mines.cd/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-20-at-15.27.28.jpeg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-[#0f2a3d]/70" />
+
+        {/* Ghost Text */}
+        <motion.span
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 0.05, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute text-white font-extrabold text-[8rem] md:text-[12rem] lg:text-[14rem] uppercase select-none pointer-events-none"
         >
-          <motion.div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-            initial={{ scale: 1.05 }}
-            animate={{ scale: index === currentSlide ? 1 : 1.05, x: index === currentSlide ? 0 : 20 }}
-            transition={{ duration: 6, ease: 'easeInOut' }}
-          />
-          <div className="absolute inset-0 bg-[#0f2a3d]/75" />
-        </motion.div>
-      ))}
+          Kerith
+        </motion.span>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-
-          {/* Ghost Text */}
+        {/* Title & Short Description */}
+        <div className="relative text-center px-4 max-w-3xl">
           <motion.h1
-            key={slides[currentSlide].ghost}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 0.05, x: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="hidden md:block absolute text-[120px] lg:text-[200px] font-extrabold text-white/5 uppercase leading-none pointer-events-none select-none"
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4"
           >
-            {slides[currentSlide].ghost}
+            À propos de Kerith Resources SARL
           </motion.h1>
-
-          <div className="max-w-3xl relative">
-            {/* Title */}
-            <motion.h2
-              key={slides[currentSlide].title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85px] font-extrabold text-white leading-tight mb-6"
-            >
-              {slides[currentSlide].title}
-            </motion.h2>
-
-            {/* Description */}
-            <motion.p
-              key={slides[currentSlide].description}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 1 }}
-              className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-xl"
-            >
-              {slides[currentSlide].description}
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="flex flex-wrap gap-4"
-            >
-      <motion.button
-        className="cursor-pointer bg-white text-black px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base font-semibold"
-        whileHover={{ scale: 1.05, backgroundColor: "#f3f4f6" }} // léger zoom + couleur
-        whileTap={{ scale: 0.95 }} // effet clic
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
-      >
-        Découvrir le projet
-      </motion.button>
-
-      <motion.button
-        className="cursor-pointer border border-white text-white px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base"
-        whileHover={{ scale: 1.05, backgroundColor: "white", color: "black" }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, type: 'spring', stiffness: 120, delay: 0.1 }}
-      >
-        Nous contacter
-      </motion.button>
-            </motion.div>
-
-            {/* Small text */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 1 }}
-              className="text-gray-400 mt-6 text-sm"
-            >
-              Un projet structuré autour d’actifs stratégiques et d’un fort potentiel de croissance.
-            </motion.p>
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="text-gray-300 md:text-lg"
+          >
+            KERITH RESOURCES SARL est une société minière congolais engagée dans une exploitation responsable, durable et innovante de ses 30 concessions à Luozi, Kongo-Central.
+          </motion.p>
         </div>
       </div>
 
-      {/* Dots navigation */}
-      <div className="absolute bottom-8 left-6 sm:left-10 flex space-x-3">
-        {slides.map((_, index) => (
-          <motion.button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-1 transition-all ${index === currentSlide ? 'w-10 bg-white' : 'w-4 bg-white/40'}`}
-            whileHover={{ scale: 1.3 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          />
-        ))}
+      {/* Body Title with Ghost */}
+      <div className="relative max-w-5xl mx-auto px-6 md:px-12 py-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="relative text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-12"
+        >
+          Notre Histoire
+          <motion.span
+            className="absolute text-gray-200 font-extrabold text-[6rem] md:text-[10rem] lg:text-[12rem] top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4 pointer-events-none select-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.1 }}
+            transition={{ duration: 1 }}
+          >
+            Kerith
+          </motion.span>
+        </motion.h2>
+
+        {/* Main Text */}
+        <div className="space-y-8 text-gray-800 text-lg md:text-xl leading-relaxed">
+          <p>
+            KERITH RESOURCES SARL est une société minière de droit congolais qui détient trente (30) concessions situées dans le territoire de Luozi, en province du Kongo-Central. La société a obtenu le Permis de Recherches n°16000, couvrant 15 carrés miniers, et bénéficie de droits exclusifs pour prospecter et rechercher des substances minérales telles que le fer, le cuivre, la bauxite et l’or.
+          </p>
+          <p>
+            Engagée dans une exploitation responsable et durable, Kerith Resources place l’innovation et le respect des normes environnementales et sociales au cœur de sa stratégie de développement. La société s’assure du suivi strict des travaux de prospection, de la conservation des échantillons, et de la réhabilitation des zones étudiées, conformément aux exigences du Code Minier et du Règlement Minier de la RDC.
+          </p>
+          <p>
+            Dans une démarche stratégique et internationale, Kerith Resources a récemment signé une joint-venture avec Asia Mineral Limited (AML), une entreprise japonaise, pour la création de Kivuvu Kongo Mines, dédiée à l’exploitation et la transformation du manganèse dans la province du Kongo-Central. Ce partenariat, supervisé par la Première Ministre Judith Suminwa, ambitionne d’exploiter jusqu’à 2 millions de tonnes de manganèse par an et de créer plus de 2.500 emplois, tout en valorisant les communautés locales et le développement régional.
+          </p>
+          <p>
+            KERITH RESOURCES SARL vise à maximiser le potentiel minéral de la RDC dans le respect des principes de responsabilité sociale et environnementale, tout en contribuant à l’essor économique et à la stabilité de la région des Grands Lacs. La société se positionne comme un acteur clé de la transformation du secteur extractif congolais, avec une vision claire et durable pour l’avenir.
+          </p>
+        </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
 
-export default Hero;
+export default About;

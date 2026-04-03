@@ -17,7 +17,7 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-[2.5rem] text-[#1f2937] mb-1">A propos</h2>
+            <h2 className="text-[2.5rem] text-[#1f2937] mb-1">À propos</h2>
 
             {/* Ligne animée */}
             <div className="py-4 overflow-hidden">
