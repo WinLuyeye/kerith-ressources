@@ -1,17 +1,15 @@
 "use client";
-import { useState, useRef, SetStateAction } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -20,13 +18,6 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Vérifier reCAPTCHA
-    if (!recaptchaToken) {
-      alert("Veuillez vérifier que vous n'êtes pas un robot");
-      return;
-    }
-
     setIsLoading(true);
 
     try {
@@ -35,19 +26,14 @@ export default function ContactSection() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         alert("Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.");
-        setFormData({ name: "", email: "", message: "" });
-        recaptchaRef.current?.reset();
-        setRecaptchaToken(null);
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         alert(`Erreur: ${data.error}`);
       }
@@ -105,7 +91,7 @@ export default function ContactSection() {
           </p>
           <ul className="font-medium text-base space-y-3">
             <li>+243 999 999 999</li>
-            <li>contact@kerithressourcesdrc.com</li>
+            <li>winnerluyeye1@gmail.com</li>
             <li>
               01. Avenue OUA, République Démocratique du Congo,
               <br />
@@ -143,6 +129,16 @@ export default function ContactSection() {
             required
             disabled={isLoading}
           />
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Votre numéro de téléphone"
+            className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
+            required
+            disabled={isLoading}
+          />
           <textarea
             name="message"
             value={formData.message}
@@ -153,16 +149,6 @@ export default function ContactSection() {
             required
             disabled={isLoading}
           />
-          
-          {/* reCAPTCHA */}
-          <div className="flex justify-center">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-              onChange={(token: SetStateAction<string | null>) => setRecaptchaToken(token)}
-              theme="light"
-            />
-          </div>
 
           <motion.button
             type="submit"

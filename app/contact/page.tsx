@@ -3,18 +3,16 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
-import { useState, useRef, SetStateAction } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -25,25 +23,19 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!recaptchaToken) {
-      alert("Veuillez vérifier que vous n’êtes pas un robot");
-      return;
-    }
     setIsLoading(true);
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+        body: JSON.stringify(formData),
       });
       const data = await response.json();
       if (response.ok) {
         alert(
           "Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.",
         );
-        setFormData({ name: "", email: "", message: "" });
-        recaptchaRef.current?.reset();
-        setRecaptchaToken(null);
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         alert(`Erreur: ${data.error}`);
       }
@@ -104,7 +96,6 @@ const Contact = () => {
       {/* Contact Info + Form */}
       <section className="relative max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Column - Info */}
-        {/* Left Column - Info */}
         <motion.div
           className="text-black flex flex-col justify-center px-5 relative"
           initial={{ opacity: 0, x: -50 }}
@@ -137,7 +128,7 @@ const Contact = () => {
           </p>
           <ul className="font-medium text-lg space-y-3 z-10 relative">
             <li>+243 999 999 999</li>
-            <li>Contact@kerithressourcesdrc.com</li>
+            <li>winnerluyeye1@gmail.com</li>
             <li>
               01. Avenue OUA, République Démocratique du Congo,
               <br />
@@ -149,7 +140,7 @@ const Contact = () => {
         {/* Right Column - Form */}
         <motion.form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 bg-white p-8 "
+          className="flex flex-col gap-4 bg-white p-8"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -175,6 +166,16 @@ const Contact = () => {
             required
             disabled={isLoading}
           />
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Votre numéro de téléphone"
+            className="border border-gray-300 p-3 text-[#1f2937] focus:outline-none focus:border-[#cf8e02] transition-colors"
+            required
+            disabled={isLoading}
+          />
           <textarea
             name="message"
             value={formData.message}
@@ -185,17 +186,6 @@ const Contact = () => {
             required
             disabled={isLoading}
           />
-
-          <div className="flex justify-center">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-              onChange={(token: SetStateAction<string | null>) =>
-                setRecaptchaToken(token)
-              }
-              theme="light"
-            />
-          </div>
 
           <motion.button
             type="submit"

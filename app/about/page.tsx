@@ -25,8 +25,7 @@ const About = () => {
           initial={{ opacity: 0, scale: 1.2 }}
           animate={{ opacity: 0.05, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="hidden md:block absolute text-[120px] lg:text-[200px] font-extrabold text-white/5 uppercase leading-none pointer-events-none select-none"
-        >
+         className="hidden md:block absolute text-[40px] sm:text-[60px] md:text-[120px] lg:text-[200px] font-extrabold text-white/5 uppercase leading-none pointer-events-none select-none">
           Kerith
         </motion.h1>
 
