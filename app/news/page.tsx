@@ -271,7 +271,7 @@ const Actualites = () => {
                 type="submit"
                 className="bg-[#cf8e02] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b87a00] transition-colors"
               >
-                S'abonner
+                S&apos;abonner
               </button>
             </form>
           </motion.div>

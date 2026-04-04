@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "id": "c1f6a8d2-3b9e-4d1a-8c7f-2a1e9b7d4f01",
+    "title": "Le potentiel du manganèse en RDC",
+    "content": "La République Démocratique du Congo possède un potentiel minier exceptionnel, notamment en manganèse. Ce minerai stratégique est essentiel pour la production d’acier et les batteries modernes.",
+    "excerpt": "La RDC, un acteur clé du manganèse mondial.",
+    "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12",
+    "date": "2026-04-04T10:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "potentiel-manganese-rdc"
+  },
+  {
+    "id": "a9b2c3d4-e5f6-47a8-b9c1-2d3e4f5a6b7c",
+    "title": "Pourquoi investir dans le secteur minier congolais",
+    "content": "Le secteur minier en RDC offre des opportunités uniques grâce à ses ressources abondantes et à un environnement en pleine évolution.",
+    "excerpt": "Un secteur stratégique en pleine croissance.",
+    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
+    "date": "2026-04-03T09:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "investir-secteur-minier-rdc"
+  },
+  {
+    "id": "d7e8f9a1-b2c3-4d5e-8f90-a1b2c3d4e5f6",
+    "title": "Les infrastructures minières au Kongo-Central",
+    "content": "Le Kongo-Central dispose d’un réseau logistique stratégique reliant les sites miniers aux ports d’exportation.",
+    "excerpt": "Une logistique clé pour l’exportation.",
+    "image": "https://images.unsplash.com/photo-1515165562835-c3b8cbb6e2f1",
+    "date": "2026-04-02T08:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "infrastructures-minieres-kongo-central"
+  },
+  {
+    "id": "f1a2b3c4-d5e6-4789-8abc-1234567890ab",
+    "title": "L’importance du manganèse dans l’industrie moderne",
+    "content": "Le manganèse est indispensable pour la fabrication de l’acier et des batteries modernes utilisées dans les technologies actuelles.",
+    "excerpt": "Un minerai indispensable à l’industrie.",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc",
+    "date": "2026-04-01T07:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "importance-manganese-industrie"
+  },
+  {
+    "id": "9a8b7c6d-5e4f-4321-9abc-abcdef123456",
+    "title": "Les défis de l’exploitation minière en RDC",
+    "content": "L’exploitation minière en RDC présente des défis liés aux infrastructures et aux exigences environnementales.",
+    "excerpt": "Des défis à relever pour un avenir durable.",
+    "image": "https://images.unsplash.com/photo-1526401281623-342a5e7f1c3c",
+    "date": "2026-03-31T06:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "defis-exploitation-miniere-rdc"
+  },
+  {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "title": "L’impact environnemental des mines",
+    "content": "Les entreprises minières adoptent des pratiques responsables pour limiter leur impact sur l’environnement.",
+    "excerpt": "Vers une exploitation minière responsable.",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "date": "2026-03-30T05:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "impact-environnemental-mines"
+  },
+  {
+    "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "title": "Le rôle des partenariats internationaux",
+    "content": "Les partenariats internationaux apportent expertise et financement au secteur minier congolais.",
+    "excerpt": "Une collaboration stratégique.",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+    "date": "2026-03-29T04:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "partenariats-internationaux-mines"
+  },
+  {
+    "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "title": "L’innovation dans l’industrie minière",
+    "content": "Les nouvelles technologies améliorent la productivité et la sécurité dans les opérations minières.",
+    "excerpt": "La technologie au service des mines.",
+    "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f",
+    "date": "2026-03-28T03:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "innovation-industrie-miniere"
+  },
+  {
+    "id": "6fa459ea-ee8a-3ca4-894e-db77e160355e",
+    "title": "Les opportunités d’emploi dans le secteur minier",
+    "content": "Le secteur minier crée de nombreux emplois et stimule l’économie locale.",
+    "excerpt": "Un moteur de création d’emplois.",
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df",
+    "date": "2026-03-27T02:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "emplois-secteur-minier"
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "title": "La transformation locale des minerais",
+    "content": "La transformation locale des minerais est un enjeu clé pour augmenter la valeur ajoutée en RDC.",
+    "excerpt": "Créer plus de valeur sur place.",
+    "image": "https://images.unsplash.com/photo-1581090700227-1e8c2e4f0d4e",
+    "date": "2026-03-26T01:00:00.000Z",
+    "author": "Kerith Resources",
+    "slug": "transformation-locale-minerais"
+  }
+]

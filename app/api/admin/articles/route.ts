@@ -3,6 +3,7 @@ import { getArticles, addArticle, deleteArticle, updateArticle } from '@/lib/art
 import { writeFile, unlink } from 'fs/promises';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
+import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-this';
 

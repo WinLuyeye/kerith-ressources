@@ -30,6 +30,7 @@ export default function AdminDashboard() {
   });
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/immutability
     fetchArticles();
   }, []);
 

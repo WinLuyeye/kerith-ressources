@@ -82,7 +82,7 @@ const ArticleDetail = () => {
             Article non trouvé
           </h1>
           <p className="text-gray-600 mb-8">
-            Désolé, l'article que vous recherchez n'existe pas.
+            Désolé, l&apos;article que vous recherchez n&apos;existe pas.
           </p>
           <Link
             href="/actualites"
