@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -115,7 +116,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
       >
-        Découvrir le projet
+        <Link href="/projet"> Découvrir le projet</Link>
       </motion.button>
 
       <motion.button
@@ -126,7 +127,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, type: 'spring', stiffness: 120, delay: 0.1 }}
       >
-        Nous contacter
+        <Link href="/contact">Nous contacter</Link>
       </motion.button>
             </motion.div>
 
