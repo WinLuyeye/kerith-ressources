@@ -83,7 +83,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Contexte & Concessions</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Contexte & Concessions</h3>
             <p>
               Kerith Resources SARL détient trente (30) concessions minières situées dans le territoire de <strong>Luozi</strong>, province du <strong>Kongo-Central</strong>. La société bénéficie également d’un partenariat stratégique avec le <strong>Service Géologique National du Congo (SGNC)</strong>, incluant des droits d’usufruit sur les Zones de Recherches Géologiques (ZRG) n°025 et n°026.
             </p>
@@ -95,7 +95,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Contexte géologique</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Contexte géologique</h3>
             <p>
               Le projet se situe dans le <strong>Supergroupe Ouest-Congolien</strong>, une province métallogénique à manganèse reconnue. La minéralisation est contrôlée par des structures tectoniques liées à l’orogenèse panafricaine. Les unités stratigraphiques (calcaires dolomitiques, schistes calcareux) constituent des pièges géochimiques favorables. Le potentiel d’expansion des ressources reste important, car la zone a été peu explorée avec des méthodes modernes.
             </p>
@@ -107,7 +107,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Minéralisation identifiée</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Minéralisation identifiée</h3>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Mbondika</strong> : minéralisation massive (colluvial) – Échantillon composite à <span className="font-bold text-green-700">43 % Mn</span>.</li>
               <li><strong>Ndokolo</strong> : minéralisation contrôlée par faille – Échantillon de surface à <span className="font-bold text-green-700">45,24 % Mn</span>.</li>
@@ -120,7 +120,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Infrastructures & Logistique</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Infrastructures & Logistique</h3>
             <p>Plusieurs options d’acheminement sont disponibles pour évacuer la production :</p>
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li><strong>Option 1</strong> : Luozi → Port de Banana (470 km par rail).</li>
@@ -137,7 +137,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Alimentation électrique</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Alimentation électrique</h3>
             <p>
               Le projet peut s’appuyer sur les barrages <strong>Inga</strong> et <strong>Zongo</strong>, garantissant un approvisionnement énergétique fiable pour les opérations minières.
             </p>
@@ -149,7 +149,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Engagement responsable</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Engagement responsable</h3>
             <p>
               Kerith Resources place l’innovation et le respect des normes environnementales et sociales au cœur de sa stratégie. La société assure le suivi des prospections, la conservation des échantillons et la réhabilitation des zones étudiées, conformément au Code Minier de la RDC.
             </p>
@@ -161,7 +161,7 @@ const Projet = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            <h3 className="text-2xl font-black text-[#0f2a3d] mb-4"> Partenariat stratégique</h3>
+            <h3 className="text-2xl font-extrabold text-[#0f2a3d] mb-4"> Partenariat stratégique</h3>
             <p>
               Une joint-venture avec <strong>Asia Mineral Limited (AML)</strong> (Japon) a été signée pour créer <strong>Kivuvu Kongo Mines</strong>, dédiée à l’exploitation et la transformation du manganèse. L’objectif est d’atteindre <strong>2 millions de tonnes par an</strong> et de créer <strong>plus de 2.500 emplois</strong>.
             </p>

@@ -99,7 +99,7 @@ export default function Actualites() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="overflow-hidden flex flex-col bg-white hover:shadow-xl transition-all duration-300"
               >
-                <Link href={`/actualites/${article.slug}`}>
+                <Link href={`/news/${article.slug}`}>
                   <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[250px] overflow-hidden cursor-pointer">
                     {article.image ? (
                       <Image
@@ -154,7 +154,7 @@ export default function Actualites() {
                       {article.author}
                     </span>
                   </div>
-                  <Link href={`/actualites/${article.slug}`}>
+                  <Link href={`/news/${article.slug}`}>
                     <h3 className="text-gray-800 text-xl font-semibold mb-3 hover:text-[#cf8e02] transition-colors duration-300 cursor-pointer line-clamp-2">
                       {article.title}
                     </h3>
@@ -163,7 +163,7 @@ export default function Actualites() {
                     {article.excerpt}
                   </p>
                   <Link
-                    href={`/actualites/${article.slug}`}
+                    href={`/news/${article.slug}`}
                     className="text-[#cf8e02] font-extrabold underline hover:text-[#f59e0b] transition-colors mt-auto inline-flex items-center gap-1 group"
                   >
                     Lire la suite

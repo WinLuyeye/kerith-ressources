@@ -9,7 +9,6 @@ const About = () => {
     <div className="bg-gray-100 w-full min-h-screen">
       {/* Navbar */}
       <Navbar />
-
       {/* Hero Section */}
       <div
         className="relative h-96 md:h-[500px] flex items-center justify-center bg-cover bg-center"
@@ -50,8 +49,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* Body Title with Ghost */}
+      {/* Body Section */}
       <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16">
+        {/* Ghost Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,14 +59,14 @@ const About = () => {
           transition={{ duration: 1 }}
           className="relative text-3xl md:text-5xl font-extrabold text-gray-900 mb-12"
         >
-          À propos de nous
+          À propos 
           <motion.span
             className="absolute text-[#0f2a3d] font-extrabold text-[6rem] md:text-[10rem] lg:text-[12rem] top-0 left-14 transform -translate-y-1/4 pointer-events-none select-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.1 }}
             transition={{ duration: 1 }}
           >
-            À propos
+            Kerith
           </motion.span>
         </motion.h2>
 
