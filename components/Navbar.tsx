@@ -144,7 +144,7 @@ const Navbar = () => {
             </div>
 
             {/* Language Switcher Desktop */}
-            <div className="hidden md:flex items-center space-x-2">
+            {/* <div className="hidden md:flex items-center space-x-2">
               <button
                 onClick={toggleLanguage}
                 className={`flex items-center space-x-2 transition-colors duration-200 ${
@@ -167,7 +167,7 @@ const Navbar = () => {
                   FR
                 </span>
               </button>
-            </div>
+            </div> */}
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-4">
@@ -177,9 +177,9 @@ const Navbar = () => {
                   isScrolled || isMobileMenuOpen ? 'text-black' : 'text-white'
                 }`}
               >
-                <span>EN</span>
+                {/* <span>EN</span>
                 <span className="mx-1">|</span>
-                <span>FR</span>
+                <span>FR</span> */}
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -259,7 +259,7 @@ const Navbar = () => {
             <div className="h-px bg-gray-200 my-6"></div>
             
             {/* Langues dans le menu mobile */}
-            <div className="flex items-center justify-center space-x-6 py-4">
+            {/* <div className="flex items-center justify-center space-x-6 py-4">
               <button
                 onClick={() => {
                   setLanguage('EN');
@@ -283,7 +283,7 @@ const Navbar = () => {
               >
                 FRANÇAIS
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

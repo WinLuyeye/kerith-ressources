@@ -116,7 +116,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
       >
-        <Link href="/projet"> Découvrir le projet</Link>
+        <Link href="/project"> Découvrir le projet</Link>
       </motion.button>
 
       <motion.button

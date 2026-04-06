@@ -29,6 +29,7 @@ const ArticleDetail = () => {
     if (params.slug) {
       fetchArticle();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.slug]);
 
   const fetchArticle = async () => {
