@@ -29,7 +29,7 @@ const ArticleDetail = () => {
     if (params.slug) {
       fetchArticle();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.slug]);
 
   const fetchArticle = async () => {
@@ -78,7 +78,7 @@ const ArticleDetail = () => {
     return (
       <div className="bg-gray-100 w-full min-h-screen">
         <Navbar />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-32 text-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
           <h1 className="text-4xl font-bold text-[#1f2937] mb-4">
             Article non trouvé
           </h1>
@@ -101,104 +101,163 @@ const ArticleDetail = () => {
     <div className="bg-gray-100 w-full min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
-      <div className="relative h-[60vh] min-h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${article.image})` }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f2a3d]/80 to-[#0f2a3d]/90" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
-            >
-              {article.title}
-            </motion.h1>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center justify-center gap-4 text-gray-300"
-            >
-              <span>Par {article.author}</span>
-              <span>•</span>
-              <span>{formatDate(article.date)}</span>
-            </motion.div>
-          </div>
+      {/* Hero Section avec effet ghost text */}
+      <div
+        className="relative h-96 md:h-[500px] flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${article.image})` }}
+      >
+        <div className="absolute inset-0 bg-[#0f2a3d]/70" />
+
+        {/* Ghost Text */}
+        <motion.h1
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 0.05, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="hidden md:block absolute text-[40px] sm:text-[60px] md:text-[120px] lg:text-[200px] font-extrabold text-white/5 uppercase leading-none pointer-events-none select-none"
+        >
+          Article
+        </motion.h1>
+
+        {/* Contenu principal Hero */}
+        <div className="max-w-7xl relative px-6 md:px-12 flex flex-col items-center justify-center ">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6 max-w-5xl"
+          >
+            {article.title}
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="flex items-center justify-center gap-4 text-gray-300 text-base sm:text-lg"
+          >
+            <span>Par {article.author}</span>
+            <span>•</span>
+            <span>{formatDate(article.date)}</span>
+          </motion.div>
         </div>
       </div>
 
-      {/* Content Section */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-16">
-        <motion.article
+      {/* Content Section avec style inspiré du projet */}
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16">
+        {/* Ghost Title */}
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-white rounded-xl shadow-lg p-8 md:p-12"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="relative text-3xl md:text-5xl font-extrabold text-gray-900 mb-12"
         >
-          <div className="prose prose-lg max-w-none">
-            {article.content.split('\n').map((paragraph, index) => (
-              <p key={index} className="text-gray-700 mb-4 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </motion.article>
+          Contenu de l&apos;article
+          <motion.span
+            className="absolute text-[#0f2a3d] font-extrabold text-[6rem] md:text-[10rem] lg:text-[12rem] top-0 left-14 transform -translate-y-1/4 pointer-events-none select-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.1 }}
+            transition={{ duration: 1 }}
+          >
+            {article.title.split(' ')[0]}
+          </motion.span>
+        </motion.h2>
 
-        {/* Related Articles */}
-        {relatedArticles.length > 0 && (
+        {/* Article Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 1 }}
+          className="space-y-8 text-gray-800 text-lg md:text-xl leading-relaxed"
+        >
+          {article.content.split('\n').map((paragraph, index) => (
+            <motion.p
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + index * 0.1, duration: 0.8 }}
+              className="mb-4"
+            >
+              {paragraph}
+            </motion.p>
+          ))}
+        </motion.div>
+
+        {/* Related Articles Section */}
+        {/* {relatedArticles.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-16"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="mt-24"
           >
-            <h3 className="text-2xl font-bold text-[#1f2937] mb-8 text-center">
+            <h3 className="relative text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 ">
               Articles similaires
+              <motion.span
+                className="absolute text-[#0f2a3d] font-extrabold text-[4rem] md:text-[7rem] lg:text-[8rem] top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 0.08 }}
+                transition={{ duration: 1 }}
+              >
+                Similaires
+              </motion.span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedArticles.map((related) => (
-                <Link
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedArticles.map((related, index) => (
+                <motion.div
                   key={related.id}
-                  href={`/news/${related.slug}`}
-                  className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.8 }}
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    {related.image ? (
-                      <Image
-                        src={related.image}
-                        alt={related.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#003233] to-[#0f2a3d]">
-                        <span className="text-white font-bold">KERITH</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-semibold text-[#1f2937] mb-2 line-clamp-2 group-hover:text-[#cf8e02] transition-colors">
-                      {related.title}
-                    </h4>
-                    <p className="text-sm text-gray-500">
-                      {formatDate(related.date)}
-                    </p>
-                  </div>
-                </Link>
+                  <Link
+                    href={`/news/${related.slug}`}
+                    className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block transform hover:-translate-y-2"
+                  >
+                    <div className="relative h-56 overflow-hidden">
+                      {related.image ? (
+                        <Image
+                          src={related.image}
+                          alt={related.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#003233] to-[#0f2a3d]">
+                          <span className="text-white font-bold text-2xl">KERITH</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-6">
+                      <h4 className="font-bold text-xl text-[#1f2937] mb-3 line-clamp-2 group-hover:text-[#cf8e02] transition-colors">
+                        {related.title}
+                      </h4>
+                      <p className="text-sm text-gray-500">
+                        {formatDate(related.date)}
+                      </p>
+                    </div>
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>
-        )}
+        )} */}
 
         {/* Back Button */}
-        <div className="text-center mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className=" mt-16"
+        >
           <Link
-            href="/actualites"
-            className="inline-flex items-center gap-2 bg-[#003233] text-white px-6 py-3 rounded-lg hover:bg-[#004d4d] transition-colors"
+            href="/news"
+            className="inline-flex items-center gap-3 bg-[#003233] text-white px-8 py-4 rounded-lg hover:bg-[#004d4d] transition-all duration-300 transform hover:scale-105 text-lg font-semibold shadow-lg"
           >
             <svg
-              className="w-4 h-4"
+              className="w-4 h-3"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -212,8 +271,8 @@ const ArticleDetail = () => {
             </svg>
             Retour aux actualités
           </Link>
-        </div>
-      </section>
+        </motion.div>
+      </div>
 
       <Footer />
     </div>

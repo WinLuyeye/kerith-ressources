@@ -70,7 +70,7 @@ export default function AboutSection() {
               className="w-full h-full"
             >
               <Image
-                src="/logo2.png" // ⚠️ corrige le path ici
+                src="/logo3.png" // ⚠️ corrige le path ici
                 fill
                 style={{ objectFit: "cover" }}
                 priority
