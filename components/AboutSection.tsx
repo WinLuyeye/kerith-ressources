@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import img from "../public/Logo3.jpg";
 export default function AboutSection() {
   return (
     <section id="about" className="w-full pt-[90px] pb-[90px] px-5 bg-white">
@@ -70,7 +70,7 @@ export default function AboutSection() {
               className="w-full h-full"
             >
               <Image
-                src="/logo2.png" // ⚠️ corrige le path ici
+                src={img}
                 fill
                 style={{ objectFit: "cover" }}
                 priority
